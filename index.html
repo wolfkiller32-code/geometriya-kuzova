@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ГЕОМЕТРИЯ КУЗОВА — Кузовной ремонт в Челябинске | ул. Каслинская 1/1</title>
+<meta name="description" content="Кузовной ремонт в Челябинске: покраска, жестяные работы, сварка, восстановление геометрии, ремонт бамперов. ул. Каслинская 1/1. Тел: +7 (922) 632-60-30.">
+<meta name="theme-color" content="#0E1013">
+
+<!-- Open Graph -->
+<meta property="og:title" content="ГЕОМЕТРИЯ КУЗОВА | Кузовной ремонт в Челябинске">
+<meta property="og:description" content="Полный цикл кузовного ремонта и покраски. ул. Каслинская 1/1. Бесплатная консультация и оценка.">
+<meta property="og:type" content="website">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoBodyShop",
+  "name": "ГЕОМЕТРИЯ КУЗОВА",
+  "description": "Кузовной ремонт легковых автомобилей в Челябинске: покраска, жестяные работы, сварка, восстановление геометрии, ремонт бамперов",
+  "telephone": "+7 (922) 632-60-30",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Каслинская, 1/1",
+    "addressLocality": "Челябинск",
+    "postalCode": "454000",
+    "addressCountry": "RU"
+  },
+  "openingHours": "Mo-Su 10:00-20:00",
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "187"
+  }
+}
+</script>
+
+<style>
+:root{
+  --graphite:#14161A;
+  --graphite-2:#1C1F26;
+  --graphite-3:#262A33;
+  --line:#2E333D;
+  --metal:#A8B0BD;
+  --muted:#7A8290;
+  --white:#FFFFFF;
+  --accent:#FF6B1A;
+  --accent-dark:#E0550A;
+  --radius:14px;
+  --radius-sm:10px;
+  --max:1200px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--graphite);
+  color:var(--white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* ---------- HEADER ---------- */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(20,22,26,.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.header__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;gap:24px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.3px}
+.logo__mark{
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,var(--accent),#FF9A4D);
+  display:grid;place-items:center;
+  font-size:16px;font-weight:800;color:#14161A;
+}
+.nav{display:flex;gap:28px;font-size:15px;color:var(--metal)}
+.nav a{transition:color .2s}
+.nav a:hover{color:var(--white)}
+.header__right{display:flex;align-items:center;gap:16px}
+.header__phone{font-weight:600;font-size:15px;white-space:nowrap;transition:color .2s}
+.header__phone:hover{color:var(--accent)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 24px;border-radius:var(--radius-sm);
+  font-size:15px;font-weight:600;
+  transition:transform .15s,background .2s,box-shadow .2s;
+  white-space:nowrap;
+}
+.btn--primary{background:var(--accent);color:#14161A}
+.btn--primary:hover{background:#FF7D33;transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,107,26,.3)}
+.btn--ghost{background:transparent;color:var(--white);border:1px solid var(--line)}
+.btn--ghost:hover{border-color:var(--metal);background:rgba(255,255,255,.04)}
+.btn--lg{padding:17px 34px;font-size:16px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:80px 0 90px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;top:-30%;right:-15%;
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,26,.12),transparent 65%);
+  pointer-events:none;
+}
+.hero__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px;border-radius:99px;
+  background:rgba(255,107,26,.1);border:1px solid rgba(255,107,26,.25);
+  color:var(--accent);font-size:13px;font-weight:600;margin-bottom:24px;
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{
+  font-size:clamp(34px,4.6vw,58px);line-height:1.08;
+  font-weight:800;letter-spacing:-1.5px;margin-bottom:22px;
+}
+h1 .accent{color:var(--accent)}
+.hero__sub{
+  font-size:17px;color:var(--metal);max-width:520px;margin-bottom:34px;line-height:1.6;
+}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.hero__stats{display:flex;gap:40px;flex-wrap:wrap}
+.stat__num{font-size:26px;font-weight:800;letter-spacing:-.5px}
+.stat__num span{color:var(--accent)}
+.stat__label{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* Hero card */
+.hero__card{
+  background:var(--graphite-2);border:1px solid var(--line);
+  border-radius:var(--radius);padding:28px;position:relative;
+}
+.hero__card h3{font-size:17px;margin-bottom:6px;font-weight:700}
+.hero__card p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;color:var(--metal);margin-bottom:6px}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 14px;border-radius:var(--radius-sm);
+  background:var(--graphite);border:1px solid var(--line);
+  color:var(--white);font-size:15px;font-family:inherit;
+  transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,107,26,.12);
+}
+.field textarea{resize:vertical;min-height:70px}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237A8290' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.upload{
+  display:flex;align-items:center;gap:12px;padding:14px;
+  border:1.5px dashed var(--line);border-radius:var(--radius-sm);
+  color:var(--muted);font-size:14px;cursor:pointer;
+  transition:border-color .2s,background .2s;
+}
+.upload:hover{border-color:var(--accent);background:rgba(255,107,26,.04)}
+.upload input{display:none}
+.upload__icon{width:34px;height:34px;border-radius:8px;background:var(--graphite-3);display:grid;place-items:center;flex-shrink:0;color:var(--accent)}
+.hero__card .btn{width:100%;margin-top:8px}
+.form__note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* ---------- SECTIONS ---------- */
+.section{padding:90px 0;border-top:1px solid var(--line)}
+.section__head{max-width:640px;margin-bottom:52px}
+.section__tag{font-size:13px;color:var(--accent);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+h2{font-size:clamp(26px,3.2vw,40px);line-height:1.15;font-weight:800;letter-spacing:-1px;margin-bottom:16px}
+.section__desc{color:var(--metal);font-size:16px}
+
+/* ---------- SERVICES ---------- */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{
+  background:var(--graphite-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;transition:border-color .25s,transform .25s;position:relative;overflow:hidden;
+}
+.service:hover{border-color:#3E4552;transform:translateY(-3px)}
+.service__icon{
+  width:44px;height:44px;border-radius:11px;
+  background:linear-gradient(135deg,rgba(255,107,26,.15),rgba(255,107,26,.05));
+  border:1px solid rgba(255,107,26,.25);
+  display:grid;place-items:center;margin-bottom:18px;font-size:20px;
+}
+.service h3{font-size:18px;margin-bottom:10px;font-weight:700;letter-spacing:-.3px}
+.service p{font-size:14.5px;color:var(--metal);line-height:1.6;margin-bottom:18px}
+.service__meta{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--line);font-size:13px}
+.service__price{font-weight:700;color:var(--white)}
+.service__time{color:var(--muted)}
+
+/* ---------- BEFORE / AFTER ---------- */
+.ba{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:16/10;user-select:none;touch-action:none;
+  border:1px solid var(--line);background:var(--graphite-2);
+  cursor:ew-resize;
+}
+.ba__layer{position:absolute;inset:0;display:grid;place-items:center}
+.ba__before{
+  background:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0 12px,transparent 12px 24px),
+    linear-gradient(140deg,#2A2119,#1A1A1F 60%,#0F1114);
+}
+.ba__after{
+  background:
+    radial-gradient(ellipse at 40% 35%,rgba(255,107,26,.18),transparent 55%),
+    linear-gradient(140deg,#1F2733,#14171C 60%,#0F1114);
+  clip-path:inset(0 50% 0 0);
+}
+.ba__label{
+  position:absolute;top:16px;padding:6px 14px;border-radius:99px;
+  font-size:12px;font-weight:700;letter-spacing:1px;backdrop-filter:blur(8px);
+}
+.ba__before .ba__label{left:16px;background:rgba(120,120,120,.35);color:#E6E6E6}
+.ba__after .ba__label{right:16px;background:rgba(255,107,26,.9);color:#14161A}
+.ba__ph{color:#525A68;font-size:13px;text-align:center;line-height:1.6;padding:20px;max-width:280px}
+.ba__ph b{color:#8A93A3;display:block;font-size:15px;margin-bottom:6px;font-weight:600}
+.ba__handle{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;
+  background:var(--accent);transform:translateX(-50%);pointer-events:none;
+  box-shadow:0 0 20px rgba(255,107,26,.6);
+}
+.ba__grip{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;
+  background:var(--accent);display:grid;place-items:center;
+  color:#14161A;font-weight:700;font-size:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);
+}
+.ba__caption{
+  position:absolute;bottom:0;left:0;right:0;padding:16px 20px;
+  background:linear-gradient(transparent,rgba(10,11,13,.92));
+  font-size:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;
+  pointer-events:none;
+}
+.ba__caption strong{font-weight:600}
+.ba__caption span{color:var(--muted);font-size:13px;white-space:nowrap}
+.ba-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+.ba-side{display:flex;flex-direction:column;gap:20px}
+
+/* ---------- PROCESS ---------- */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+.step{
+  position:relative;padding:26px 22px 22px;
+  background:var(--graphite-2);border:1px solid var(--line);border-radius:var(--radius);
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  position:absolute;top:-14px;left:22px;
+  font-size:13px;font-weight:800;letter-spacing:1px;
+  background:var(--accent);color:#14161A;
+  padding:4px 10px;border-radius:6px;
+}
+.step h3{font-size:16px;margin:10px 0 8px;font-weight:700}
+.step p{font-size:14px;color:var(--metal);line-height:1.6}
+.step__time{display:block;margin-top:14px;font-size:12.5px;color:var(--accent);font-weight:600}
+
+/* ---------- GUARANTEES ---------- */
+.guarantees{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.guarantee{
+  display:flex;gap:16px;padding:24px;
+  background:var(--graphite-2);border:1px solid var(--line);border-radius:var(--radius);
+}
+.guarantee__icon{
+  width:40px;height:40px;flex-shrink:0;border-radius:10px;
+  background:rgba(255,107,26,.1);border:1px solid rgba(255,107,26,.2);
+  display:grid;place-items:center;font-size:18px;
+}
+.guarantee h3{font-size:15.5px;margin-bottom:6px;font-weight:700}
+.guarantee p{font-size:14px;color:var(--metal);line-height:1.6}
+
+/* ---------- REVIEWS ---------- */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{
+  background:var(--graphite-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;display:flex;flex-direction:column;
+}
+.review__stars{color:var(--accent);font-size:15px;margin-bottom:14px;letter-spacing:2px}
+.review__text{font-size:15px;color:#D4D9E0;line-height:1.65;flex:1;margin-bottom:20px}
+.review__author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.review__avatar{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--graphite-3),#333944);
+  display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--metal);
+}
+.review__name{font-size:14px;font-weight:600}
+.review__car{font-size:12.5px;color:var(--muted)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:0 auto}
+.faq details{
+  background:var(--graphite-2);border:1px solid var(--line);
+  border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;
+  transition:border-color .2s;
+}
+.faq details[open]{border-color:#3E4552}
+.faq summary{
+  padding:20px 24px;cursor:pointer;list-style:none;
+  font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";font-size:22px;color:var(--accent);font-weight:400;
+  transition:transform .25s;flex-shrink:0;
+}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq__body{padding:0 24px 22px;color:var(--metal);font-size:15px;line-height:1.7}
+
+/* ---------- CTA ---------- */
+.cta{
+  background:linear-gradient(140deg,var(--graphite-2),#191C22);
+  border:1px solid var(--line);border-radius:20px;
+  padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;top:-50%;left:-10%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,26,.1),transparent 65%);
+}
+.cta__content{position:relative}
+.cta h2{margin-bottom:16px}
+.cta p{color:var(--metal);margin-bottom:28px;font-size:16px}
+.cta__contacts{display:flex;flex-direction:column;gap:14px;position:relative}
+.cta__item{
+  display:flex;align-items:center;gap:14px;padding:16px 20px;
+  background:var(--graphite);border:1px solid var(--line);border-radius:var(--radius-sm);
+  transition:border-color .2s;
+}
+.cta__item:hover{border-color:var(--accent)}
+.cta__item-icon{width:36px;height:36px;border-radius:9px;background:var(--graphite-3);display:grid;place-items:center;flex-shrink:0}
+.cta__item-label{font-size:12.5px;color:var(--muted)}
+.cta__item-value{font-size:15.5px;font-weight:600}
+
+/* ---------- FOOTER ---------- */
+.footer{border-top:1px solid var(--line);padding:48px 0 90px;margin-top:20px}
+.footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer__desc{color:var(--muted);font-size:14px;line-height:1.7;margin-top:16px;max-width:320px}
+.footer h4{font-size:14px;margin-bottom:16px;font-weight:700}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer ul a{font-size:14px;color:var(--metal);transition:color .2s}
+.footer ul a:hover{color:var(--accent)}
+.footer__bottom{
+  padding-top:24px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);
+}
+
+/* ---------- MOBILE STICKY ---------- */
+.mobile-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:rgba(20,22,26,.96);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);padding:12px 16px;gap:12px;
+}
+.mobile-bar .btn{flex:1;padding:14px}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1024px){
+  .hero__grid{grid-template-columns:1fr;gap:44px}
+  .hero__card{max-width:520px}
+  .services,.guarantees,.reviews{grid-template-columns:repeat(2,1fr)}
+  .process{grid-template-columns:repeat(2,1fr)}
+  .ba-grid{grid-template-columns:1fr}
+  .cta{grid-template-columns:1fr;gap:36px;padding:40px}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+}
+@media(max-width:680px){
+  .wrap{padding:0 18px}
+  .section{padding:64px 0}
+  .services,.guarantees,.reviews,.process{grid-template-columns:1fr}
+  .hero{padding:52px 0 64px}
+  .hero__stats{gap:28px}
+  .header__phone{display:none}
+  .header .btn{display:none}
+  .mobile-bar{display:flex}
+  body{padding-bottom:70px}
+  .cta{padding:30px 24px;border-radius:16px}
+  .footer__grid{grid-template-columns:1fr;gap:32px}
+  .footer{padding-bottom:40px}
+  .ba{aspect-ratio:4/3}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="wrap header__inner">
+    <a href="#" class="logo">
+      <span class="logo__mark">Г</span>
+      ГЕОМЕТРИЯ КУЗОВА
+    </a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#process">Процесс</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header__right">
+      <a href="tel:+79226326030" class="header__phone">+7 (922) 632-60-30</a>
+      <a href="#estimate" class="btn btn--primary">Оценить ремонт</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="eyebrow">Кузовной ремонт в Челябинске · ул. Каслинская 1/1</div>
+      <h1>Вернём вашему автомобилю <span class="accent">заводскую геометрию</span> и безупречный вид.</h1>
+      <p class="hero__sub">
+        Полный цикл кузовного ремонта и покраски любой сложности. Ремонт бамперов, удаление коррозии,
+        жестяные и сварочные работы, восстановление геометрии. Бесплатная консультация и оценка стоимости.
+      </p>
+      <div class="hero__cta">
+        <a href="#estimate" class="btn btn--primary btn--lg">Рассчитать по фото</a>
+        <a href="#works" class="btn btn--ghost btn--lg">Смотреть работы</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__num">10<span>+ лет</span></div>
+          <div class="stat__label">опыт работы</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">700<span> м²</span></div>
+          <div class="stat__label">современный кузовной цех</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">4.9<span> / 5</span></div>
+          <div class="stat__label">рейтинг на 2ГИС и Яндекс</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Форма оценки -->
+    <div class="hero__card" id="estimate">
+      <h3>Бесплатная оценка по фото</h3>
+      <p>Пришлите фото повреждения — вернёмся с расчётом стоимости и сроков.</p>
+      <form onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='Заявка отправлена ✓'; this.querySelector('.btn').style.background='#2BA84A';">
+        <div class="field">
+          <label for="svc">Что нужно сделать</label>
+          <select id="svc">
+            <option>Ремонт бампера и пластика</option>
+            <option>Локальная покраска элемента</option>
+            <option>Покраска элемента</option>
+            <option>Удаление коррозии</option>
+            <option>Жестяные работы</option>
+            <option>Замена арок / порогов</option>
+            <option>Замена приварных панелей</option>
+            <option>Сварочные работы</option>
+            <option>Восстановление геометрии</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="name">Имя</label>
+          <input type="text" id="name" placeholder="Как к вам обращаться" required>
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <label class="upload">
+          <input type="file" accept="image/*" multiple>
+          <span class="upload__icon">📷</span>
+          <span>Прикрепить фото повреждения</span>
+        </label>
+        <button type="submit" class="btn btn--primary">Получить расчёт</button>
+      </form>
+      <p class="form__note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__tag">Услуги</div>
+      <h2>Полный цикл кузовных работ</h2>
+      <p class="section__desc">От локальной покраски до восстановления геометрии после серьёзного ДТП — на одном участке.</p>
+    </div>
+    <div class="services">
+      <div class="service reveal">
+        <div class="service__icon">🛠</div>
+        <h3>Ремонт бамперов и пластика</h3>
+        <p>От мелких трещин до серьёзных повреждений — вернём вашим пластиковым элементам первозданный вид.</p>
+        <div class="service__meta"><span class="service__price">от 1 000 ₽</span><span class="service__time">1–2 дня</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">🎨</div>
+        <h3>Локальная покраска элемента</h3>
+        <p>Идеальное решение для устранения небольших дефектов без полной покраски.</p>
+        <div class="service__meta"><span class="service__price">от 5 000 ₽</span><span class="service__time">1 день</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">✨</div>
+        <h3>Покраска элемента</h3>
+        <p>Полное обновление внешнего вида одного или нескольких элементов кузова.</p>
+        <div class="service__meta"><span class="service__price">от 12 000 ₽</span><span class="service__time">2–3 дня</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">🔧</div>
+        <h3>Удаление коррозии</h3>
+        <p>Остановим ржавчину и защитим ваш автомобиль от дальнейшего разрушения.</p>
+        <div class="service__meta"><span class="service__price">от 1 000 ₽</span><span class="service__time">1–2 дня</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">💪</div>
+        <h3>Жестяные работы</h3>
+        <p>Восстановим форму кузова после вмятин и деформаций.</p>
+        <div class="service__meta"><span class="service__price">от 3 000 ₽</span><span class="service__time">от 1 дня</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">🔩</div>
+        <h3>Замена арок и порогов</h3>
+        <p>Вернём целостность и эстетику колесных арок и нижней части кузова.</p>
+        <div class="service__meta"><span class="service__price">от 2 500 ₽</span><span class="service__time">от 2 дней</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">⚙️</div>
+        <h3>Замена приварных панелей</h3>
+        <p>Профессиональная замена любых приварных элементов кузова.</p>
+        <div class="service__meta"><span class="service__price">от 5 000 ₽</span><span class="service__time">от 3 дней</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">🔥</div>
+        <h3>Сварочные работы</h3>
+        <p>Качественное выполнение любых сварочных работ для восстановления кузова.</p>
+        <div class="service__meta"><span class="service__price">от 1 000 ₽</span><span class="service__time">от 1 дня</span></div>
+      </div>
+      <div class="service reveal">
+        <div class="service__icon">📐</div>
+        <h3>Восстановление геометрии</h3>
+        <p>Вернём вашему автомобилю идеальные заводские параметры кузова на стапеле.</p>
+        <div class="service__meta"><span class="service__price">от 5 000 ₽</span><span class="service__time">от 3 дней</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKS ============ -->
+<section class="section" id="works">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__tag">Работы</div>
+      <h2>До и после</h2>
+      <p class="section__desc">Потяните ползунок, чтобы увидеть результат. Все фото — реальные работы мастерской.</p>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba reveal" data-ba>
+        <div class="ba__layer ba__before">
+          <span class="ba__label">ДО</span>
+          <div class="ba__ph"><b>Фото повреждения</b>Замените плейсхолдер на реальное фото из альбома группы</div>
+        </div>
+        <div class="ba__layer ba__after">
+          <span class="ba__label">ПОСЛЕ</span>
+          <div class="ba__ph"><b>Фото результата</b>Тот же ракурс, тот же свет</div>
+        </div>
+        <div class="ba__handle"><div class="ba__grip">⇆</div></div>
+        <div class="ba__caption">
+          <strong>Пример работы · ремонт и покраска</strong>
+          <span>из альбома группы</span>
+        </div>
+      </div>
+
+      <div class="ba-side">
+        <div class="ba reveal" data-ba style="aspect-ratio:16/11">
+          <div class="ba__layer ba__before">
+            <span class="ba__label">ДО</span>
+            <div class="ba__ph" style="font-size:12px"><b>Фото</b>Плейсхолдер</div>
+          </div>
+          <div class="ba__layer ba__after">
+            <span class="ba__label">ПОСЛЕ</span>
+            <div class="ba__ph" style="font-size:12px"><b>Фото</b>Плейсхолдер</div>
+          </div>
+          <div class="ba__handle"><div class="ba__grip">⇆</div></div>
+          <div class="ba__caption" style="padding:12px 16px;font-size:12.5px">
+            <strong>Пример работы</strong>
+            <span>из альбома группы</span>
+          </div>
+        </div>
+
+        <div class="ba reveal" data-ba style="aspect-ratio:16/11">
+          <div class="ba__layer ba__before">
+            <span class="ba__label">ДО</span>
+            <div class="ba__ph" style="font-size:12px"><b>Фото</b>Плейсхолдер</div>
+          </div>
+          <div class="ba__layer ba__after">
+            <span class="ba__label">ПОСЛЕ</span>
+            <div class="ba__ph" style="font-size:12px"><b>Фото</b>Плейсхолдер</div>
+          </div>
+          <div class="ba__handle"><div class="ba__grip">⇆</div></div>
+          <div class="ba__caption" style="padding:12px 16px;font-size:12.5px">
+            <strong>Пример работы</strong>
+            <span>из альбома группы</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__tag">Процесс</div>
+      <h2>Как проходит ремонт</h2>
+      <p class="section__desc">Никаких сюрпризов: фиксируем сроки и стоимость, показываем результат на каждом этапе.</p>
+    </div>
+    <div class="process">
+      <div class="step reveal">
+        <h3>Заявка и фото</h3>
+        <p>Присылаете фото повреждения через сайт или в мессенджер — получаете предварительный расчёт.</p>
+        <span class="step__time">15 минут</span>
+      </div>
+      <div class="step reveal">
+        <h3>Осмотр и смета</h3>
+        <p>Пригоняете автомобиль. Мастер проводит дефектовку, согласовывает перечень работ и финальную стоимость.</p>
+        <span class="step__time">30–60 минут</span>
+      </div>
+      <div class="step reveal">
+        <h3>Ремонт</h3>
+        <p>Работы по этапам: геометрия → кузов → покраска → сборка. Держим на связи, отправляем фото.</p>
+        <span class="step__time">от 1 дня</span>
+      </div>
+      <div class="step reveal">
+        <h3>Выдача</h3>
+        <p>Проверяете результат при хорошем свете, подписываете акт. Гарантия на все виды работ.</p>
+        <span class="step__time">30 минут</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEES ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__tag">Гарантии</div>
+      <h2>Почему нам доверяют</h2>
+    </div>
+    <div class="guarantees">
+      <div class="guarantee reveal">
+        <div class="guarantee__icon">🛡</div>
+        <div>
+          <h3>Гарантия на все виды работ</h3>
+          <p>Предоставляем письменную гарантию на кузовные и малярные работы. Срок уточняйте у мастера.</p>
+        </div>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee__icon">📄</div>
+        <div>
+          <h3>Фиксированная смета</h3>
+          <p>Стоимость и сроки фиксируются после дефектовки. Никаких «нашлись скрытые повреждения».</p>
+        </div>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee__icon">🎯</div>
+        <div>
+          <h3>Точный подбор цвета</h3>
+          <p>Подбор краски по коду с выкрасом на пробнике до начала покраски. Цвет совпадает даже на сложных оттенках.</p>
+        </div>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee__icon">📸</div>
+        <div>
+          <h3>Фотоотчёт на этапах</h3>
+          <p>Отправляем фото до, в процессе и после ремонта. Вы видите работу, а не просто забираете результат.</p>
+        </div>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee__icon">🏢</div>
+        <div>
+          <h3>Современный цех 700 м²</h3>
+          <p>Просторный кузовной цех с современным оборудованием, раздевалкой и столовой для комфорта клиентов.</p>
+        </div>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee__icon">🤝</div>
+        <div>
+          <h3>Бесплатная консультация</h3>
+          <p>Запишитесь на бесплатную консультацию и оценку стоимости уже сегодня.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__tag">Отзывы</div>
+      <h2>Что говорят клиенты</h2>
+      <p class="section__desc">Смотрите актуальные отзывы на 2ГИС и Яндекс.Картах.</p>
+    </div>
+    <div class="reviews">
+      <div class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">Сотрудник автосервиса грамотно объяснил плюсы и минусы процедуры. Персонал приветливый, общительный. Работы выполнили в срок.</p>
+        <div class="review__author">
+          <div class="review__avatar">А</div>
+          <div>
+            <div class="review__name">Александр</div>
+            <div class="review__car">2ГИС · Челябинск</div>
+          </div>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">Делали рихтовку капота и ТО. Всё сделали как надо, никаких претензий. Цены нормальные. Рекомендуем ехать туда для кузовных работ.</p>
+        <div class="review__author">
+          <div class="review__avatar">М</div>
+          <div>
+            <div class="review__name">Михаил</div>
+            <div class="review__car">Яндекс.Карты · Челябинск</div>
+          </div>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">Красили бампер, цвет сложный. Подобрали идеально, даже под солнцем не отличить. Сделали быстро, дали гарантию.</p>
+        <div class="review__author">
+          <div class="review__avatar">Д</div>
+          <div>
+            <div class="review__name">Дмитрий</div>
+            <div class="review__car">2ГИС · Челябинск</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px" class="reveal">
+      <a href="https://2gis.ru/chelyabinsk/geo/70000001114689029" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Все отзывы на 2ГИС →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section__head reveal" style="max-width:820px;margin-left:auto;margin-right:auto;text-align:center">
+      <div class="section__tag">Вопросы</div>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq reveal">
+      <details open>
+        <summary>Сколько времени займёт ремонт после ДТП?</summary>
+        <div class="faq__body">Зависит от объёма. Локальная покраска — 1–2 дня. Ремонт крыла с покраской — 3–4 дня. Восстановление геометрии после серьёзного ДТП — от 5 дней. Точный срок фиксируем после дефектовки.</div>
+      </details>
+      <details>
+        <summary>Даёте ли гарантию на работы?</summary>
+        <div class="faq__body">Да, мы предоставляем гарантию на все виды кузовных и малярных работ. Конкретный срок гарантии уточняйте у мастера при оформлении заказа — он зависит от типа выполненных работ.</div>
+      </details>
+      <details>
+        <summary>Можно ли отремонтировать бампер, а не покупать новый?</summary>
+        <div class="faq__body">В большинстве случаев — да. Паяем трещины, восстанавливаем крепления, красим в цвет кузова. Замена требуется только при серьёзных разрывах или утрате геометрии. Оценим по фото бесплатно.</div>
+      </details>
+      <details>
+        <summary>Как вы подбираете цвет краски?</summary>
+        <div class="faq__body">По коду краски + учитываем выгорание. Обязательно делаем выкрас на пробнике и показываем клиенту до начала покраски. Это снимает главный страх — «цвет не совпадёт».</div>
+      </details>
+      <details>
+        <summary>Работаете ли вы со страховыми компаниями?</summary>
+        <div class="faq__body">Да, работаем со страховыми компаниями. Поможем с оформлением документов и проведём независимую экспертизу при необходимости. Консультация бесплатная.</div>
+      </details>
+      <details>
+        <summary>Где вы находитесь и как записаться?</summary>
+        <div class="faq__body">Мы находимся по адресу: г. Челябинск, ул. Каслинская, 1/1. Записаться можно по телефону <a href="tel:+79226326030" style="color:var(--accent)">+7 (922) 632-60-30</a> или написать в группу ВКонтакте <a href="https://vk.me/geometriyakuzova" target="_blank" style="color:var(--accent)">vk.me/geometriyakuzova</a>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / CONTACTS ============ -->
+<section class="section" id="contacts">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="cta__content">
+        <div class="section__tag">Контакты</div>
+        <h2>Приезжайте на бесплатную дефектовку</h2>
+        <p>Осмотр 30–60 минут, точная смета и сроки — сразу на месте. Записаться можно по телефону или в мессенджере.</p>
+        <a href="tel:+79226326030" class="btn btn--primary btn--lg">Позвонить сейчас</a>
+      </div>
+      <div class="cta__contacts">
+        <a href="tel:+79226326030" class="cta__item">
+          <div class="cta__item-icon">📞</div>
+          <div>
+            <div class="cta__item-label">Телефон</div>
+            <div class="cta__item-value">+7 (922) 632-60-30</div>
+          </div>
+        </a>
+        <a href="tel:+73516831205" class="cta__item">
+          <div class="cta__item-icon">📞</div>
+          <div>
+            <div class="cta__item-label">Городской телефон</div>
+            <div class="cta__item-value">+7 (351) 683-12-05</div>
+          </div>
+        </a>
+        <a href="https://2gis.ru/chelyabinsk/geo/70000001114689029" target="_blank" rel="noopener" class="cta__item">
+          <div class="cta__item-icon">📍</div>
+          <div>
+            <div class="cta__item-label">Адрес</div>
+            <div class="cta__item-value">г. Челябинск, ул. Каслинская, 1/1</div>
+          </div>
+        </a>
+        <a href="https://vk.me/geometriyakuzova" target="_blank" rel="noopener" class="cta__item">
+          <div class="cta__item-icon">💬</div>
+          <div>
+            <div class="cta__item-label">Написать в группу</div>
+            <div class="cta__item-value">vk.me/geometriyakuzova</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="logo"><span class="logo__mark">Г</span>ГЕОМЕТРИЯ КУЗОВА</div>
+        <p class="footer__desc">Кузовной ремонт легковых автомобилей в Челябинске. Полный цикл работ: от локальной покраски до восстановления геометрии.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Ремонт бамперов</a></li>
+          <li><a href="#services">Покраска элементов</a></li>
+          <li><a href="#services">Жестяные работы</a></li>
+          <li><a href="#services">Сварочные работы</a></li>
+          <li><a href="#services">Восстановление геометрии</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="#works">Наши работы</a></li>
+          <li><a href="#process">Процесс ремонта</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ГЕОМЕТРИЯ КУЗОВА. Все права защищены.</span>
+      <span>Не является публичной офертой</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="mobile-bar">
+  <a href="tel:+79226326030" class="btn btn--ghost">📞 Позвонить</a>
+  <a href="#estimate" class="btn btn--primary">Оценить по фото</a>
+</div>
+
+<script>
+/* ---------- Before / After slider ---------- */
+document.querySelectorAll('[data-ba]').forEach(ba => {
+  const top = ba.querySelector('.ba__after');
+  const handle = ba.querySelector('.ba__handle');
+  let dragging = false;
+
+  const setPos = (clientX) => {
+    const rect = ba.getBoundingClientRect();
+    let x = (clientX - rect.left) / rect.width;
+    x = Math.max(0.02, Math.min(0.98, x));
+    top.style.clipPath = `inset(0 ${100 - x * 100}% 0 0)`;
+    handle.style.left = `${x * 100}%`;
+  };
+
+  ba.addEventListener('pointerdown', e => {
+    dragging = true;
+    setPos(e.clientX);
+    ba.setPointerCapture(e.pointerId);
+  });
+  ba.addEventListener('pointermove', e => { if (dragging) setPos(e.clientX); });
+  ba.addEventListener('pointerup', () => dragging = false);
+  ba.addEventListener('pointercancel', () => dragging = false);
+  ba.addEventListener('pointerleave', () => { if (dragging) dragging = false; });
+});
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 3) * 80}ms`;
+  io.observe(el);
+});
+
+/* ---------- Smooth anchor offset for sticky header ---------- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#' || id.length < 2) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    const y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>

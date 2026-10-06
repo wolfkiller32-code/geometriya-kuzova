@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /img/works/
+Disallow: /*?offset=
+
+Sitemap: https://geometriya-kuzova.ru/sitemap.xml
