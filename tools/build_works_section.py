@@ -14,7 +14,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))          # .../tools
-SITE = os.path.dirname(ROOT)                                # корень репозитория = сайт
+SITE = os.path.join(os.path.dirname(ROOT), "docs")          # публикуемая папка сайта
 OUT_HTML = os.path.join(ROOT, "works-section.html")
 INDEX = os.path.join(SITE, "index.html")
 
@@ -40,21 +40,14 @@ PROJECTS = [
     ("9182", "dtp", "Chevrolet Camaro — готов", "Финальная сборка после восстановления геометрии и покраски.", "457248910"),
 ]
 
-BADGES = {
-    "dtp": "ДТП", "pokraska": "Покраска", "korroziya": "Коррозия", "bamper": "Бампер",
-}
-# более точные бейджи для отдельных проектов
-BADGE_OVERRIDE = {
-    "9248": "Премиум", "9192": "Премиум", "9186": "3 дня", "9160": "Геометрия",
-    "9177": "Коррозия", "9163": "Переделка", "9143": "До/после", "9139": "Цвет",
-    "9134": "Цвет", "9253": "Цех", "9210": "Покраска", "9182": "ДТП",
-    "9248b": "Бампер",
-}
+# Стикеры на фото убраны по просьбе заказчика. SEO они не несли —
+# текст для поисковиков дают alt, figcaption и data-атрибуты.
+# Фильтрация галереи работает по невидимому атрибуту data-cat.
 
 ITEM = """      <figure class="work reveal" data-cat="{cats}" data-full="img/works/_{pid}.jpg" data-title="{title}" data-desc="{desc}" data-link="https://vk.com/wall-113402547_{post}">
         <img src="img/works/_{pid}.jpg" alt="{alt}" loading="lazy" width="{w}" height="{h}">
         <figcaption class="work__cap"><div class="work__title">{title}</div><div class="work__desc">{short}</div></figcaption>
-        <span class="work__badge">{badge}</span><span class="work__zoom">⤢</span>
+        <span class="work__zoom">⤢</span>
       </figure>"""
 
 HEAD = """<!-- ================== ГАЛЕРЕЯ РАБОТ (источник: группа ВК vk.com/geometriyakuzova) ================== -->
@@ -63,8 +56,8 @@ HEAD = """<!-- ================== ГАЛЕРЕЯ РАБОТ (источник: �
     <div class="works-head reveal">
       <div class="section__head" style="margin-bottom:0">
         <div class="section__tag">Наши работы</div>
-        <h2>Реальные проекты кузовного цеха</h2>
-        <p class="section__desc">Фотографии из нашего производства: кузовной ремонт после ДТП, покраска, восстановление геометрии, сварка и борьба с коррозией. Каждый проект — с реальными сроками и результатом.</p>
+        <h2>Наши работы: реальные проекты цеха</h2>
+        <p class="section__desc">Кузовной ремонт после ДТП, покраска, восстановление геометрии, сварка и борьба с коррозией. Фотографии из нашего цеха — с реальными сроками и результатом. За сезон вернули в идеальное состояние 83 автомобиля.</p>
       </div>
       <a href="https://vk.com/geometriyakuzova" target="_blank" rel="noopener" class="btn btn--ghost">Все работы во ВКонтакте →</a>
     </div>
@@ -115,12 +108,11 @@ def main():
             print("нет файла:", path, file=sys.stderr)
             continue
         w, h = img_size(path)
-        badge = BADGE_OVERRIDE.get(post + ("b" if i == 16 else "")) or BADGES.get(cats.split()[0], "Работа")
         short = desc.replace("—", "-")
         short = (short[:52] + "…") if len(short) > 52 else short
         items.append(ITEM.format(cats=cats, pid=full, post=post, title=title, desc=desc,
                                  alt=f"{title} — кузовной ремонт в Челябинске",
-                                 short=short, badge=badge, w=w, h=h))
+                                 short=short, w=w, h=h))
 
     html = HEAD.format(items="\n\n".join(items))
     with open(OUT_HTML, "w", encoding="utf-8") as f:
