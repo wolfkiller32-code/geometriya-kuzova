@@ -17,8 +17,8 @@ from PIL import Image
 
 SRC = r"C:\Users\vyazi\Downloads\6UW-M2z7u8-Qvk-kTM8dJ18fSxqGevGENwpvAROp3JbqisO6b0PcAbdECA0I7HSp-iA5EzMKcKnC1aZpFrq8qM37.jpg"
 OUT_DIR = r"C:\Сайт кузовн\docs\img"
-SIZE = 1400               # итоговый размер квадрата (px)
-MAX_ALPHA = 44            # максимальная непрозрачность (≈17%) — заметно, но не мешает
+SIZE = 1800               # исходник для чёткости на больших экранах
+MAX_ALPHA = 22            # непрозрачность ≈9%: знак бледный, но текст читаем
 LOGO_RGB = (255, 255, 255)  # цвет штрихов
 
 
@@ -48,20 +48,32 @@ def main():
     out.write(f"средняя непрозрачность: {avg_alpha:.1f}/255 "
               f"(макс {MAX_ALPHA})\n")
 
-    # как это будет выглядеть поверх фона сайта #14161A
+    # ---- проверка читаемости текста поверх знака ----
+    def lin(v):
+        v /= 255
+        return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+
+    def contrast(c1, c2):
+        l1 = 0.2126*lin(c1[0]) + 0.7152*lin(c1[1]) + 0.0722*lin(c1[2])
+        l2 = 0.2126*lin(c2[0]) + 0.7152*lin(c2[1]) + 0.0722*lin(c2[2])
+        hi, lo = max(l1, l2), min(l1, l2)
+        return (hi + 0.05) / (lo + 0.05)
+
     bg = (20, 22, 26)
-    sample = []
-    for c in a:
-        al = c[3] / 255
-        r = int(bg[0] * (1 - al) + LOGO_RGB[0] * al)
-        g = int(bg[1] * (1 - al) + LOGO_RGB[1] * al)
-        b = int(bg[2] * (1 - al) + LOGO_RGB[2] * al)
-        sample.append((r, g, b))
-    dark = [c for c in sample if sum(c) < 200]
-    bright = [c for c in sample if sum(c) > 250]
-    out.write(f"\nповерх фона #14161A:\n")
-    out.write(f"  максимум штриха: RGB {max(sample, key=sum)}\n")
-    out.write(f"  фон остаётся: RGB {bg}\n")
+    # самый светлый штрих знака поверх фона
+    al = MAX_ALPHA / 255
+    brightest = tuple(int(bg[i] * (1 - al) + LOGO_RGB[i] * al) for i in range(3))
+
+    out.write(f"\nфон {bg} -> штрих {brightest}\n")
+    out.write("\nчитаемость текста поверх знака (WCAG, нужно ≥4.5 для тела):\n")
+    for label, col in [("белый текст #FFFFFF", (255, 255, 255)),
+                       ("основной текст #D4D9E0", (212, 217, 224)),
+                       ("приглушённый #A8B0BD", (168, 176, 189)),
+                       ("подписи #7A8290", (122, 130, 144))]:
+        bg_c = contrast(col, bg)
+        worst = contrast(col, brightest)
+        mark = "OK" if worst >= 4.5 else ("на грани" if worst >= 3 else "риск")
+        out.write(f"  {label}: на фоне {bg_c:.1f}:1 -> на знаке {worst:.1f}:1 [{mark}]\n")
 
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
     print(out.getvalue())

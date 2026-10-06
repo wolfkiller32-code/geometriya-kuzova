@@ -1,6 +1,8 @@
 :root{
   --graphite:#14161A; --graphite-2:#1C1F26; --graphite-3:#262A33;
-  --line:#2E333D; --metal:#A8B0BD; --muted:#7A8290;
+  /* --muted осветлён с #7A8290 до #8E97A6: на фоне с водяным знаком
+     контраст подписей вырастает с 3.7:1 до 4.9:1 (WCAG AA >= 4.5). */
+  --line:#2E333D; --metal:#A8B0BD; --muted:#8E97A6;
   --white:#FFFFFF; --accent:#FF6B1A;
   --radius:14px; --radius-sm:10px; --max:1200px;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -20,10 +22,16 @@ body{font-family:var(--font);color:var(--white);line-height:1.55;-webkit-font-sm
    слой работает одинаково во всех браузерах.
 
    Слои:
-     html        — базовый цвет фона (самый низ);
+     html         — базовый цвет фона (самый низ);
      body::before — знак: выше фона, но НИЖЕ всего контента;
      inset:0      — слой на весь экран, знак центрируется в нём;
-     pointer-events:none — слой не перехватывает клики и ссылки. */
+     pointer-events:none — слой не перехватывает клики и ссылки.
+
+   Размер задаётся в зависимости от экрана (см. --wm-size и медиазапросы):
+   знак остаётся крупным на мониторе, но не «вылезает» за пределы
+   экрана телефона и не мешает читать текст на планшете. */
+:root{ --wm-size:min(56vmin, 620px) }   /* базово: планшеты и ноутбуки */
+
 body::before{
   content:"";
   position:fixed;
@@ -33,7 +41,25 @@ body::before{
   background-image:url("img/bg-watermark.png");
   background-repeat:no-repeat;
   background-position:center center;
-  background-size:min(78vmin,900px);
+  background-size:var(--wm-size);
+}
+
+/* Размер знака под конкретный экран */
+@media (max-width:680px){          /* телефоны: знак заметно меньше */
+  :root{ --wm-size:min(78vmin, 340px) }
+}
+@media (min-width:681px) and (max-width:1024px){   /* планшеты */
+  :root{ --wm-size:min(64vmin, 480px) }
+}
+@media (min-width:1025px) and (max-width:1440px){  /* ноутбуки */
+  :root{ --wm-size:min(58vmin, 660px) }
+}
+@media (min-width:1441px){         /* большие мониторы */
+  :root{ --wm-size:min(54vmin, 900px) }
+}
+/* Низкие экраны (ноутбук в альбомной ориентации) — ограничиваем по высоте */
+@media (max-height:760px){
+  :root{ --wm-size:min(48vmin, 420px) }
 }
 
 /* Контент всегда выше водяного знака.
