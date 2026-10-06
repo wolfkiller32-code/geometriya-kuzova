@@ -3,4 +3,4 @@ Allow: /
 Disallow: /img/works/
 Disallow: /*?offset=
 
-Sitemap: https://geometriya-kuzova.ru/sitemap.xml
+Sitemap: https://wolfkiller32-code.github.io/geometriya-kuzova/sitemap.xml
