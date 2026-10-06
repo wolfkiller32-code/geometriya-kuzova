@@ -12,8 +12,8 @@ import io
 import sys
 
 UA = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
-ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE_DIR = os.path.join(ROOT, "geometriya-kuzova")
+ROOT = os.path.dirname(os.path.abspath(__file__))          # .../tools
+SITE_DIR = os.path.dirname(ROOT)                            # корень репозитория = сайт
 IMG_DIR = os.path.join(SITE_DIR, "img", "works")
 CATALOG_PATH = os.path.join(ROOT, "_vk_catalog_v2.json")
 INDEX_PATH = os.path.join(ROOT, "_vk_photos_index_v2.json")

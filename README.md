@@ -5,20 +5,25 @@
 
 ## Структура
 
+Сайт лежит **в корне репозитория** — так GitHub Pages отдаёт его напрямую.
+
 ```
-geometriya-kuzova/
+/
 ├─ index.html          — главная: hero, услуги, «Почему мы», галерея работ, процесс, отзывы, FAQ, контакты
 ├─ privacy.html        — политика конфиденциальности
 ├─ style.css           — стили (тёмная тема, адаптив)
 ├─ app.js              — Telegram-форма с фото, фильтр галереи, лайтбокс, кнопка «наверх»
 ├─ robots.txt
 ├─ sitemap.xml
+├─ .nojekyll           — отключает обработку Jekyll на GitHub Pages
 ├─ img/
 │  ├─ logo.jpg / logo-200.jpg / logo-360.jpg  — логотип из группы ВК
 │  ├─ favicon.ico / favicon.png               — иконка сайта
 │  ├─ og-cover.jpg                            — превью для соцсетей (og:image)
 │  └─ works/                                  — 438 фото работ из группы ВК
-└─ uslugi/             — 10 страниц услуг (SEO-тексты 600–800 слов + фото примеров)
+├─ uslugi/             — 10 страниц услуг (SEO-тексты 600–800 слов + фото примеров)
+├─ tools/              — скрипты и исходники текстов (на сайт не влияют)
+└─ DEPLOY.md           — инструкция по публикации
 ```
 
 ## Галерея работ
@@ -54,17 +59,18 @@ https://vk.com/geometriyakuzova (id 113402547).
 4. **Проверить телефоны и ссылки** на 2ГИС/Яндекс.Карты.
 5. **Загрузить сайт на хостинг** и отправить sitemap.xml в Яндекс.Вебмастер и Google Search Console.
 
-## Инструменты пересборки (папка site-build)
+## Инструменты пересборки (папка tools)
 
 | Файл | Назначение |
 |---|---|
 | `fetch_vk_photos.py` | собирает посты и фото из группы ВК (Googlebot UA) в `_vk_catalog_v2.json` |
-| `download_vk_photos_v2.py` | скачивает фото в `geometriya-kuzova/img/works/` |
+| `download_vk_photos_v2.py` | скачивает фото в `img/works/` |
 | `rebuild_service_pages.py` | пересобирает 10 страниц услуг из `seo/*.html` |
+| `build_works_section.py` | генерирует блок галереи работ |
 | `build-service-pages.ps1` | обёртка над `rebuild_service_pages.py` |
 | `_verify_site.py` | проверяет битые ссылки, картинки и анкоры |
 
-> **Важно:** `build-site.legacy.ps1` — старый полный генератор. При повторном запуске он затрёт
+> **Важно:** `tools/build-site.legacy.ps1` — старый полный генератор. При повторном запуске он затрёт
 > галерею, логотип, SEO-тексты и privacy.html. Не запускайте его.
 
 ## Как открыть локально
@@ -72,7 +78,7 @@ https://vk.com/geometriyakuzova (id 113402547).
 Двойной клик по `index.html` или локальный сервер:
 
 ```
-python -m http.server 8000 --directory geometriya-kuzova
+python -m http.server 8000
 ```
 
 ## Как запустить Telegram-бота

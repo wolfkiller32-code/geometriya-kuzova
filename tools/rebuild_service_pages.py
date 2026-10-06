@@ -9,8 +9,8 @@
 import os
 import re
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.join(ROOT, "geometriya-kuzova")
+ROOT = os.path.dirname(os.path.abspath(__file__))          # .../tools
+SITE = os.path.dirname(ROOT)                                # корень репозитория = сайт
 SEO = os.path.join(ROOT, "seo")
 USLUGI = os.path.join(SITE, "uslugi")
 

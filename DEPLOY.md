@@ -1,7 +1,14 @@
 # Публикация сайта и работа с репозиторием
 
-Репозиторий: https://github.com/wolfkiller32-code/geometriya-kuzova (приватный)
-Ветка: `main`. Сайт лежит в папке `site-build/geometriya-kuzova/`.
+**Сайт уже опубликован:** https://wolfkiller32-code.github.io/geometriya-kuzova/
+
+Репозиторий: https://github.com/wolfkiller32-code/geometriya-kuzova (публичный)
+Ветка: `main`. Сайт лежит **в корне репозитория** — GitHub Pages отдаёт его как есть.
+
+## Как сайт публикуется
+
+GitHub Pages настроен на публикацию из ветки `main`, папка `/ (root)`.
+Любой `git push` в `main` автоматически обновляет сайт в интернете (1–2 минуты).
 
 ## Как вносить изменения (командная строка)
 
@@ -15,6 +22,7 @@ git push
 Пароль вводить не нужно — авторизация настроена через GitHub CLI (`gh auth setup-git`).
 
 Проверить, что всё отправлено: `git status` → должно быть `nothing to commit, working tree clean`.
+Через пару минут изменения появятся на https://wolfkiller32-code.github.io/geometriya-kuzova/
 
 ## Как откатить неудачное изменение
 
@@ -24,30 +32,29 @@ git revert <хеш-коммита>     # отменить конкретный �
 git checkout -- <файл>       # отменить правки в файле
 ```
 
-## Варианты публикации сайта в интернете
+## Свой домен (необязательно)
 
-### Вариант 1. Netlify (рекомендую — бесплатно, из приватного репозитория)
-1. Зарегистрируйтесь на netlify.com через GitHub.
-2. **Add new site → Import an existing project → GitHub** → выберите `geometriya-kuzova`.
-3. Настройки сборки:
-   - **Base directory:** пусто
-   - **Build command:** пусто (сайт статический)
-   - **Publish directory:** `site-build/geometriya-kuzova`
-4. **Deploy**. Через минуту сайт будет доступен по адресу вида `https://имя.netlify.app`.
-5. Свой домен: **Domain settings → Add custom domain**.
+Если купите домен (например, `geometriya-kuzova.ru`):
+1. В репозитории: **Settings → Pages → Custom domain** → введите домен → Save.
+2. У регистратора домена добавьте CNAME-запись: `www` → `wolfkiller32-code.github.io`,
+   либо A-записи на IP GitHub Pages (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153).
+3. Включите **Enforce HTTPS**.
+4. После привязки домена замените `geometriya-kuzova.ru` в файлах сайта на реальный домен.
 
-### Вариант 2. Vercel
-1. vercel.com → **Add New → Project → Import Git Repository**.
-2. **Root Directory:** `site-build/geometriya-kuzova`, Framework Preset: **Other**.
-3. Deploy.
+## Другие варианты хостинга (альтернатива)
 
-### Вариант 3. Cloudflare Pages
+### Netlify
+1. netlify.com → **Add new site → Import an existing project → GitHub** → `geometriya-kuzova`.
+2. **Build command:** пусто, **Publish directory:** `.` (точка — корень репозитория).
+3. Deploy → адрес вида `https://имя.netlify.app`.
+
+### Vercel
+1. vercel.com → **Add New → Project → Import Git Repository** → `geometriya-kuzova`.
+2. **Root Directory:** `.`, Framework Preset: **Other**. Deploy.
+
+### Cloudflare Pages
 1. dash.cloudflare.com → **Workers & Pages → Create → Pages → Connect to Git**.
-2. Build output directory: `site-build/geometriya-kuzova`.
-
-### Вариант 4. GitHub Pages
-⚠️ Для **приватного** репозитория GitHub Pages требует платный план Pro.
-Бесплатно — только если сделать репозиторий публичным (**Settings → General → Danger Zone → Change visibility**).
+2. **Build output directory:** `.`
 Тогда: **Settings → Pages → Source: Deploy from a branch → main → / (root)**.
 Учтите: сайт лежит в подпапке, поэтому Pages отдаст корневой `index.html` (старая версия).
 Правильнее перенести папку `site-build/geometriya-kuzova/*` в корень репозитория.

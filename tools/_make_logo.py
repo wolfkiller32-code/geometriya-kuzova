@@ -3,8 +3,8 @@
 import os
 from PIL import Image
 
-SRC = r"C:\Сайт кузовн\site-build\geometriya-kuzova\img\logo.jpg"
-IMG = r"C:\Сайт кузовн\site-build\geometriya-kuzova\img"
+SRC = r"C:\Сайт кузовн\img\logo.jpg"
+IMG = r"C:\Сайт кузовн\img"
 
 im = Image.open(SRC).convert("RGB")
 print("logo size:", im.size, "mode:", im.mode)

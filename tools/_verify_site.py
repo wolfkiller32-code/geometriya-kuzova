@@ -3,11 +3,13 @@
 import os, re, io, sys
 from urllib.parse import urlparse, unquote
 
-SITE = r"C:\Сайт кузовн\site-build\geometriya-kuzova"
+SITE = r"C:\Сайт кузовн"
 out = io.StringIO()
 
 html_files = []
 for r, d, f in os.walk(SITE):
+    if ".git" in r.split(os.sep) or "tools" in r.split(os.sep):
+        continue
     for x in f:
         if x.endswith(".html"):
             html_files.append(os.path.join(r, x))

@@ -13,8 +13,8 @@ import os
 import re
 import sys
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.join(ROOT, "geometriya-kuzova")
+ROOT = os.path.dirname(os.path.abspath(__file__))          # .../tools
+SITE = os.path.dirname(ROOT)                                # корень репозитория = сайт
 OUT_HTML = os.path.join(ROOT, "works-section.html")
 INDEX = os.path.join(SITE, "index.html")
 
