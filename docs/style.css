@@ -6,8 +6,40 @@
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--graphite);color:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* Фон на html — это самый нижний слой страницы. Благодаря этому
+   знак с z-index:-1 окажется ВЫШЕ фона, но НИЖЕ контента. */
+html{scroll-behavior:smooth;background-color:var(--graphite)}
+body{font-family:var(--font);color:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ================== ВОДЯНОЙ ЗНАК ЛОГОТИПА НА ФОНЕ ==================
+   Требование: логотип всегда по центру ЭКРАНА, в том числе при прокрутке.
+
+   Почему position:fixed, а не background-attachment:fixed:
+   iOS Safari и часть мобильных браузеров игнорируют фиксированную
+   привязку фона — знак «уезжает» вместе со страницей. Фиксированный
+   слой работает одинаково во всех браузерах.
+
+   Слои:
+     html        — базовый цвет фона (самый низ);
+     body::before — знак: выше фона, но НИЖЕ всего контента;
+     inset:0      — слой на весь экран, знак центрируется в нём;
+     pointer-events:none — слой не перехватывает клики и ссылки. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:url("img/bg-watermark.png");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:min(78vmin,900px);
+}
+
+/* Контент всегда выше водяного знака.
+   Элементы с собственным фиксированным позиционированием
+   (.header, .mobile-bar, .fab, .lightbox) не трогаем. */
+.breadcrumbs,.hero,.section,.footer,.trust{position:relative;z-index:1}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none}
